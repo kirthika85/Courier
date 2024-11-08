@@ -51,11 +51,17 @@ def query_openai(prompt, df):
     logger.debug("Sending messages to OpenAI: %s", messages)
 
     # Call OpenAI API
-    response = openai.ChatCompletion.create(
-        model="gpt-4",  # Confirm your model name
-        messages=messages,
-        temperature=0.2
-    )
+    #response = openai.ChatCompletion.create(
+    #    model="gpt-4",  # Confirm your model name
+    #    messages=messages,
+    #    temperature=0.2
+    #)
+    openai.api_key = OPENAI_API_KEY
+        response = openai.Chat.create(
+                    model="gpt-4",
+                    messages=messages,
+                    temperature=0.2
+        )
     answer = response.choices[0].message['content']
     logger.debug("Received response from OpenAI: %s", response)
     return answer
