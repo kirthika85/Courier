@@ -12,7 +12,7 @@ logger = logging.getLogger(__name__)
 
 # Set API key for OpenAI
 openai.api_key = os.getenv("OPENAI_API_KEY")
-csv_location = "data/courier_rates.csv"
+csv_location = "courier_rates.csv"
 
 # Initialize chat history in session state
 if "chat_history" not in st.session_state:
