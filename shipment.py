@@ -23,11 +23,6 @@ def df_to_json(csv_location):
     df = pd.read_csv(csv_location)
     return df
 
-# Function to clear text input
-def clear_text():
-    st.session_state.my_text = st.session_state.widget
-    st.session_state.widget = ""
-
 # Define function to interact with OpenAI API
 def query_openai(prompt, df):
     markdown_str = df.to_markdown(tablefmt="grid")
@@ -58,7 +53,7 @@ def query_openai(prompt, df):
         messages=messages,
         temperature=0.2
     )
-    answer = response.choices[0].message['content']
+    answer = response['choices'][0]['message']['content']
     logger.debug("Received response from OpenAI: %s", response)
     return answer
 
