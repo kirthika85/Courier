@@ -1,6 +1,6 @@
 streamlit
-openai==0.28
-langchain_openai
+openai>=1.6.1,<2.0.0
+langchain-openai
 pandas
 tabulate
 python-dotenv
