@@ -10,7 +10,7 @@ logging.basicConfig(level=logging.DEBUG)
 logger = logging.getLogger(__name__)
 
 OPENAI_API_KEY = os.environ["OPENAI_API_KEY"]
-csv_location  = f"data\courier_rates.csv"
+csv_location  = f"courier_rates.csv"
 
 
 # Initialize chat history in session state
