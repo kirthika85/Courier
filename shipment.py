@@ -54,7 +54,7 @@ def query_openai(prompt, df):
     
     # Make API call to OpenAI with chat history included
     response = openai.ChatCompletion.create(
-        model="gpt-4",
+        model="gpt-3.5-turbo",
         messages=messages,
         temperature=0.2
     )
