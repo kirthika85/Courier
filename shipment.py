@@ -57,7 +57,7 @@ def query_openai(prompt, df):
     #    temperature=0.2
     #)
     openai.api_key = OPENAI_API_KEY
-        response = openai.Chat.create(
+    response = openai.Chat.create(
                     model="gpt-4",
                     messages=messages,
                     temperature=0.2
